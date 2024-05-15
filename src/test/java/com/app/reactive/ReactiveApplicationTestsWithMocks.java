@@ -17,10 +17,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.LinkedHashMap;
 
-
-/*Levanta un server para hacer pruebas*/
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ReactiveApplicationTests {
+@AutoConfigureWebTestClient
+/*No levanta todo un server para hacer las pruebas*/
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+class ReactiveApplicationTestsWithMocks {
 
 	@Autowired
 	private WebTestClient client;
